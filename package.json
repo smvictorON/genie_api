@@ -1,0 +1,19 @@
+{
+  "name": "ChatGPT_API",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "chat": "clear && node chat.js",
+    "image": "clear && node image.js"
+  },
+  "keywords": [],
+  "author": "Victor <victorsm9@hotmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "dotenv": "^16.1.4",
+    "openai": "^3.2.1"
+  }
+}
