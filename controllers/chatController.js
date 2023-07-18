@@ -1,33 +1,34 @@
-const db = require('./db/connection')
-const base = db.getDB().db()
+const db = require('../db/connection')
 
-export const askIA = async(req, res) => {
-  const { question, answer } = req.body
+module.exports = {
+  askIA: async(req, res) => {
+    const { question, answer } = req.body
 
-  base.collection('dialogs').insertOne({
-    question: question,
-    answer: answer
-  })
-}
+    db.getDB().db().collection('dialogs').insertOne({
+      question: question,
+      answer: answer
+    })
+  },
 
-export const getAll = async(req, res) => {
-  const { user } = req.params
-  try {
-    const dialogs = await base.collection('dialogs').find({user: user}).toArray()
+  getAll: async(req, res) => {
+    const { user } = req.params
+    try {
+      const dialogs = await db.getDB().db().collection('dialogs').find({user: user}).toArray()
 
-    return res.json({ error: null, dialogs: dialogs })
-  } catch (err) {
-    return res.status(400).json({ err })
-  }
-}
+      return res.json({ error: null, dialogs: dialogs })
+    } catch (err) {
+      return res.status(400).json({ err })
+    }
+  },
 
-export const getOne = async(req, res) => {
-  const { id } = req.params
-  try {
-    const dialogs = await base.collection('dialogs').find({id: id})
+  getOne: async(req, res) => {
+    const { id } = req.params
+    try {
+      const dialogs = await db.getDB().db().collection('dialogs').find({id: id})
 
-    return res.json({ error: null, dialogs: dialogs })
-  } catch (err) {
-    return res.status(400).json({ err })
+      return res.json({ error: null, dialogs: dialogs })
+    } catch (err) {
+      return res.status(400).json({ err })
+    }
   }
 }

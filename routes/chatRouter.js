@@ -1,9 +1,8 @@
 const router = require("express").Router()
-import {
-  askIA,
-  getAll,
-  getOne
-} from '../controllers/chatController'
+const chatController = require('../controllers/chatController');
+const askIA = chatController.askIA;
+const getAll = chatController.getAll;
+const getOne = chatController.getOne;
 
 //create party
 router.post("/", askIA)
