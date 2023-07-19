@@ -3,15 +3,16 @@ const mongoose = require('mongoose')
 const DialogSchema = new mongoose.Schema({
   question: { type: String, required: true },
   answer: { type: String, required: true },
+  type: { type: Boolean, required: true },
   user: { type: mongoose.Types.ObjectId, required: true },
-  _created_at: { type: Date, default: Date.now },
-  _updated_at: { type: Date, default: Date.now },
+  answer_delay: { type: String, required: true },
+  timestamps: true
 })
 
-DialogSchema.pre('save', function (next) {
-  this._updated_at = new Date();
-  next();
-});
+// DialogSchema.pre('save', function (next) {
+//   this._updated_at = new Date();
+//   next();
+// });
 
 const Dialog = mongoose.model('Dialog', DialogSchema)
 

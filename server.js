@@ -19,9 +19,9 @@ db.initDB((err, db) => {
   if(err){
     console.log(err)
   }else{
-    console.log(`Banco conectou!`)
+    console.log(`DB connected!`)
     app.listen(port, () => {
-      console.log(`Aplicação rodando na porta ${port}!`)
+      console.log(`API running on ${port}!`)
     })
   }
 })

@@ -1,12 +1,12 @@
 const router = require("express").Router()
 const chatController = require('../controllers/chatController');
-const askIA = chatController.askIA;
-const getAll = chatController.getAll;
-const getOne = chatController.getOne;
+const askText = chatController.askText;
+const getAllDialogsOfUser = chatController.getAllDialogsOfUser;
+const askImage = chatController.askImage;
 
 //create party
-router.post("/", askIA)
-router.get("/all", getAll)
-router.get("/{id}", getOne)
+router.post("/text", askText)
+router.post("/image", askImage)
+router.get("/all", getAllDialogsOfUser)
 
 module.exports = router
