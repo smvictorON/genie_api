@@ -2,10 +2,10 @@
 require('dotenv').config()
 const express = require("express")
 const cors = require("cors")
-const db = require('./db/connection')
+const db = require('./src/db/connection')
 
 //routes
-const chatRouter = require("./routes/chatRouter")
+const chatRouter = require("./src/routes/chatRouter")
 
 //config
 const port = process.env.API_PORT
