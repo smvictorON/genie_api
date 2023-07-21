@@ -6,7 +6,7 @@
   "scripts": {
     "chat": "clear && node chat.js",
     "image": "clear && node image.js",
-    "start": "nodemon ./server.js localhost 3000",
+    "start": "nodemon ./server.js localhost 3000"
   },
   "keywords": [],
   "author": "Victor <victorsm9@hotmail.com>",
