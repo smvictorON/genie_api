@@ -1,7 +1,6 @@
 //modules
 require('dotenv').config()
 const express = require("express")
-const mongoose = require("mongoose")
 const cors = require("cors")
 const db = require('./db/connection')
 
@@ -9,7 +8,7 @@ const db = require('./db/connection')
 const chatRouter = require("./routes/chatRouter")
 
 //config
-const port = 3000
+const port = process.env.API_PORT
 const app = express()
 app.use(cors())
 app.use(express.json())
